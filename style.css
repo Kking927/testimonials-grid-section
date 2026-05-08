@@ -171,7 +171,7 @@ body {
   /* Daniel (Purple) spans first 2 columns */
   .testimonial-card:nth-child(1) {
     grid-column: 1 / 3;
-    background-image: url("https://raw.githubusercontent.com/Kking927/testimonials-grid-section/e50675fb9eb1ca0655eed95ff4f40afda3127eb8/images/bg-pattern-quotation.svg");
+    background-image: url("images/bg-pattern-quotation.svg");
     background-repeat: no-repeat;
     background-position: top 0 right 15%;
   }

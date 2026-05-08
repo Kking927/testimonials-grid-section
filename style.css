@@ -108,7 +108,7 @@ body {
 
 .status {
   font-size: var(--fs-xs);
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .lead-text {

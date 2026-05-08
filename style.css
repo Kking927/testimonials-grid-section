@@ -20,7 +20,7 @@
   --fs-body: 0.8125rem; /* 13px */
   --fs-name: 0.875rem; /* 14px */
   --fs-status: 0.75rem; /* 12px */
-  --fs-lead: 1.125rem; /* 18px */
+  --fs-lead: 1.25rem; /* 20px */
   --fs-quote: 0.875rem; /* 13px */
 
   /*   Font Weights */
@@ -69,7 +69,6 @@ body {
   font-weight: var(--fw-medium);
   background-color: var(--grey-100);
   min-height: 100vh;
-  padding: var(--space-3xl) var(--space-xs-plus);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +76,7 @@ body {
 
 .testimonial-grid {
   display: grid;
-  gap: var(--space-xs-plus);
+  gap: var(--space-sm);
   max-width: 327px;
   margin: 0 auto;
 }
@@ -95,7 +94,7 @@ body {
 }
 
 .testimonial-card {
-  padding: var(--space-sm);
+  padding: var(--space-xs);
   border-radius: var(--space-3xs-plus);
   position: relative;
   display: flex;
@@ -113,13 +112,13 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  gap: var(--space-2xs);
-  margin-block-end: var(--space-2xs-plus);
+  gap: var(--space-3xs-plus);
+  margin-block-end: var(--space-3xs-plus);
 }
 
 .avatar {
-  width: clamp(var(--space-2xs-plus), 4vw + 1rem, var(--space-md));
-  height: clamp(var(--space-2xs-plus), 4vw + 1rem, var(--space-md));
+  width: clamp(var(--space-2xs), 4vw + 1rem, var(--space-sm-plus));
+  height: clamp(var(--space-2xs), 4vw + 1rem, var(--space-sm-plus));
   border-radius: 50%;
   border: 2px solid hsla(0, 0%, 100%, 0.5);
   object-fit: cover;
@@ -150,7 +149,7 @@ body {
   font-size: var(--fs-lead);
   font-weight: var(--fw-semibold);
   line-height: 1.2;
-  margin-block-end: var(--space-2xs-plus);
+  margin-block-end: var(--space-2xs);
 }
 
 .quote-body {
@@ -164,23 +163,26 @@ body {
   background: var(--purple-500);
   color: var(--white);
 }
+
 .card-grey {
   background: var(--grey-500);
   color: var(--white);
 }
+
 .card-dark {
   background: var(--dark-blue);
   color: var(--white);
 }
+
 .card-white {
   background: var(--white);
   color: var(--grey-500);
 }
 
-/* Specific border for white card avatars */
 .card-purple .avatar {
   border-color: var(--purple-300);
 }
+
 .card-dark .avatar {
   border-color: var(--purple-500);
 }

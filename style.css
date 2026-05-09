@@ -53,6 +53,23 @@
 
   --space-3xl: 4.25rem; /* 68px */
   --space-3xl-plus: 4.5rem; /* 72px */
+
+ /* Effects */
+  --duration-fast: 0.3s;
+  --duration-medium: 0.4s;
+  --duration-slow: 0.5s;
+
+  --ease-smooth: ease;
+  --ease-snappy: ease-out;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Composite Transitions */
+  --transition-smooth: var(--duration-medium) var(--ease-smooth);   /* For opacity/shadows */
+  --transition-transform: var(--duration-fast) var(--ease-smooth); /* For general scaling */
+  --transition-pop: var(--duration-fast) var(--ease-spring);       /* For snappy/bouncy scaling */
+  --transition-bg: var(--duration-slow) var(--ease-snappy);       /* For the quote icon */
+
+  --box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Global Reset & Base Styles */
@@ -75,20 +92,8 @@ body {
 .testimonial-grid {
   display: grid;
   gap: var(--space-sm);
-  max-width: 327px;
+  max-width: 20.4375rem;
   margin: 0 auto;
-}
-
-.testimonial-grid:hover .testimonial-card {
-  opacity: 0.7;
-  transform: scale(0.98);
-}
-
-.testimonial-grid .testimonial-card:hover {
-  opacity: 1;
-  transform: scale(1.02) translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  z-index: 10;
 }
 
 .testimonial-card {
@@ -101,8 +106,23 @@ body {
   align-items: flex-start;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  transition: 
+    transform var(--transition-transform),
+    opacity var(--transition-smooth), 
+    box-shadow var(--transition-smooth);
   z-index: 1;
+}
+
+.testimonial-grid:hover .testimonial-card {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.testimonial-grid .testimonial-card:hover {
+  opacity: 1;
+  transform: scale(1.02) translateY(-10px);
+  box-shadow: var(--box-shadow);
+  z-index: 10;
 }
 
 /* Header & Text styles */
@@ -111,16 +131,15 @@ body {
   align-items: center;
   width: 100%;
   gap: var(--space-3xs-plus);
-  margin-block-end: var(--space-3xs-plus);
+  margin-block-end: var(--space-2xs-plus);
 }
 
 .avatar {
   width: clamp(var(--space-2xs), 4vw + 1rem, var(--space-sm-plus));
   height: clamp(var(--space-2xs), 4vw + 1rem, var(--space-sm-plus));
   border-radius: 50%;
-  border: 2px solid hsla(0, 0%, 100%, 0.5);
   object-fit: cover;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform var(--transition-pop);
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -135,6 +154,7 @@ body {
 
 .name {
   font-size: var(--fs-name);
+  opacity: 0.8;
 }
 
 .status {
@@ -145,13 +165,12 @@ body {
 .lead-text {
   font-size: var(--fs-lead);
   line-height: 1.2;
-  margin-block-end: var(--space-2xs);
+  margin-block-end: var(--space-2xs-plus);
 }
 
 .quote-body {
   font-size: var(--fs-quote);
   line-height: 1.5;
-  opacity: 0.7;
 }
 
 /* Card Variations */
@@ -175,6 +194,11 @@ body {
   color: var(--grey-500);
 }
 
+.card-purple .avatar,
+.card-dark .avatar {
+  border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+
 .card-purple .avatar {
   border-color: var(--purple-300);
 }
@@ -188,9 +212,9 @@ body {
 }
 
 /* Media Queries */
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
   .testimonial-grid {
-    max-width: 1110px;
+    max-width: 69.375rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto auto;
   }
@@ -201,12 +225,14 @@ body {
     background-image: url("https://raw.githubusercontent.com/Kking927/testimonials-grid-section/e50675fb9eb1ca0655eed95ff4f40afda3127eb8/images/bg-pattern-quotation.svg");
     background-repeat: no-repeat;
     background-position: top 0 right 15%;
-    transition: background-position 0.5s ease-out, transform 0.3s ease;
+    transition: 
+    background-position var(--transition-bg),
+    transform var(--transition-transform);
   }
-  
+
   .testimonial-card:nth-child(1):hover {
-  background-position: top 10px right 10%;
-}
+    background-position: top 10px right 10%;
+  }
 
   /* Jonathan (Grey) */
   .testimonial-card:nth-child(2) {

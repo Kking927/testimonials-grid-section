@@ -17,11 +17,10 @@
   --font-main: "Barlow Semi Condensed", sans-serif;
 
   /*   Font Sizes */
-  --fs-body: 0.8125rem; /* 13px */
-  --fs-name: 0.875rem; /* 14px */
+  --fs-name: 0.8125rem; /* 13px */
   --fs-status: 0.75rem; /* 12px */
   --fs-lead: 1.25rem; /* 20px */
-  --fs-quote: 0.875rem; /* 13px */
+  --fs-quote: 0.8125rem; /* 13px */
 
   /*   Font Weights */
   --fw-medium: 500;
@@ -65,7 +64,6 @@
 
 body {
   font-family: var(--font-main);
-  font-size: var(--fs-body);
   font-weight: var(--fw-medium);
   background-color: var(--grey-100);
   min-height: 100vh;
@@ -94,7 +92,7 @@ body {
 }
 
 .testimonial-card {
-  padding: var(--space-xs);
+  padding: var(--space-2xs-plus);
   border-radius: var(--space-3xs-plus);
   position: relative;
   display: flex;
@@ -129,6 +127,11 @@ body {
 
 .testimonial-card:hover .avatar {
   transform: scale(1.1);
+}
+
+.name,
+.lead-text {
+  font-weight: var(--fw-semibold);
 }
 
 .name {
@@ -179,6 +182,10 @@ body {
 
 .card-dark .avatar {
   border-color: var(--purple-500);
+}
+
+.jeanette .lead-text {
+  width: 18ch;
 }
 
 /* Media Queries */

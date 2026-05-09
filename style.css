@@ -54,8 +54,15 @@
   --space-3xl: 4.25rem; /* 68px */
   --space-3xl-plus: 4.5rem; /* 72px */
   
-/*   Avatar Border */
-  --border: 2px solid hsla(0, 0%, 100%, 0.5);
+/*   Avatar Borders */
+  --border-width: 2px;
+  --border-style: solid;
+  
+/*   Light Purple */
+  --border-light: var(--border-width) var(--border-style) var(--purple-300);
+  
+/*  Dark Purple */
+  --border-dark: var(--border-width) var(--border-style) var(--purple-500);
 
  /* Effects */
   --duration-fast: 0.3s;
@@ -195,16 +202,11 @@ body {
 }
 
 .card-purple .avatar {
-  border-color: var(--purple-300);
+  border: var(--border-light);
 }
 
 .card-dark .avatar {
-  border-color: var(--purple-500);
-}
-
-.card-purple .avatar,
-.card-dark .avatar {
-  border: var(--border);
+  border: var(--border-dark);
 }
 
 .jeanette .lead-text {

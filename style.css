@@ -129,7 +129,6 @@ body {
   transform: scale(1.1);
 }
 
-.name,
 .lead-text {
   font-weight: var(--fw-semibold);
 }

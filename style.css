@@ -101,13 +101,13 @@ body {
 
 .testimonial-grid {
   display: grid;
-  gap: var(--space-sm);
+  gap: var(--space-xs-plus);
   max-width: 20.4375rem;
   margin: 0 auto;
 }
 
 .testimonial-card {
-  padding: var(--space-xs-plus);
+  padding: var(--space-sm);
   border-radius: var(--space-3xs-plus);
   position: relative;
   display: flex;

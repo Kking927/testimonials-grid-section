@@ -131,11 +131,6 @@ body {
   transform: scale(1.1);
 }
 
-.name,
-.lead-text {
-  font-weight: var(--fw-semibold);
-}
-
 .name {
   font-size: var(--fs-name);
 }
@@ -147,7 +142,6 @@ body {
 
 .lead-text {
   font-size: var(--fs-lead);
-  font-weight: var(--fw-semibold);
   line-height: 1.2;
   margin-block-end: var(--space-2xs);
 }
@@ -171,7 +165,7 @@ body {
 
 .card-dark {
   background: var(--dark-blue);
-  color: var(--white);
+  color: var(--grey-200);
 }
 
 .card-white {

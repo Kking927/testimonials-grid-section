@@ -181,6 +181,7 @@ body {
 }
 
 /* Card Variations */
+/* Single Classes */
 .card-purple {
   background: var(--purple-500);
   color: var(--white);
@@ -201,6 +202,7 @@ body {
   color: var(--grey-500);
 }
 
+/* Multiple Classes */
 .card-purple .avatar {
   border: var(--border-light);
 }

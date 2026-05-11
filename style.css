@@ -64,7 +64,7 @@
 /*  Dark Purple */
   --border-dark: var(--border-width) var(--border-style) var(--purple-500);
 
- /* Effects */
+ /* Animation Effects */
   --duration-fast: 0.3s;
   --duration-medium: 0.4s;
   --duration-slow: 0.5s;

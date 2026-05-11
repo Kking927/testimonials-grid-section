@@ -61,7 +61,7 @@ During this project, I improved my ability to implement CSS custom variables. In
 }
 
 .testimonial-grid .testimonial-card:hover {
-  opacity: 1; /* Highlights the active card */
+  opacity: 1;
   transform: scale(1.04) translateY(-10px);
   transition: transform var(--transition-pop);
 }

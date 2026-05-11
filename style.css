@@ -53,18 +53,18 @@
 
   --space-3xl: 4.25rem; /* 68px */
   --space-3xl-plus: 4.5rem; /* 72px */
-  
-/*   Avatar Borders */
+
+  /*   Avatar Borders */
   --border-width: 2px;
   --border-style: solid;
-  
-/*   Light Purple */
+
+  /*   Light Purple */
   --border-light: var(--border-width) var(--border-style) var(--purple-300);
-  
-/*  Dark Purple */
+
+  /*  Dark Purple */
   --border-dark: var(--border-width) var(--border-style) var(--purple-500);
 
- /* Animation Effects */
+  /* Animation Effects */
   --duration-fast: 0.3s;
   --duration-medium: 0.4s;
   --duration-slow: 0.5s;
@@ -74,12 +74,14 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Composite Transitions */
-  --transition-smooth: var(--duration-medium) var(--ease-smooth);   /* For opacity/shadows */
+  --transition-smooth: var(--duration-medium) var(--ease-smooth); /* For opacity/shadows */
   --transition-transform: var(--duration-fast) var(--ease-smooth); /* For general scaling */
-  --transition-pop: var(--duration-fast) var(--ease-spring);       /* For snappy/bouncy scaling */
-  --transition-bg: var(--duration-slow) var(--ease-snappy);       /* For the quote icon */
+  --transition-pop: var(--duration-fast) var(--ease-spring); /* For snappy/bouncy scaling */
+  --transition-bg: var(--duration-slow) var(--ease-snappy); /* For the quote icon */
 
-  --box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-base: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  --shadow-focus: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Global Reset & Base Styles */
@@ -115,11 +117,10 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
+  box-shadow: var(--shadow-base);
   cursor: pointer;
-  transition: 
-    transform var(--transition-transform),
-    opacity var(--transition-smooth), 
-    box-shadow var(--transition-smooth);
+  transition: transform var(--transition-transform),
+    opacity var(--transition-smooth), box-shadow var(--transition-smooth);
   z-index: 1;
 }
 
@@ -131,7 +132,7 @@ body {
 .testimonial-grid .testimonial-card:hover {
   opacity: 1;
   transform: scale(1.02) translateY(-10px);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--shadow-focus);
   z-index: 10;
 }
 
@@ -229,9 +230,8 @@ body {
     background-image: url("https://raw.githubusercontent.com/Kking927/testimonials-grid-section/e50675fb9eb1ca0655eed95ff4f40afda3127eb8/images/bg-pattern-quotation.svg");
     background-repeat: no-repeat;
     background-position: top 0 right 15%;
-    transition: 
-    background-position var(--transition-bg),
-    transform var(--transition-transform);
+    transition: background-position var(--transition-bg),
+      transform var(--transition-transform);
   }
 
   .testimonial-card:nth-child(1):hover {
